@@ -148,11 +148,13 @@ void Piece::updateBoundingBox() {
 	startJ = 0;
 	for (int j = 0; j < PIECE_SIZE - 1; j++) {
 		if (checkZeroCol(j)) startJ = j + 1;
+		else break;
 	}
 
 	endJ = PIECE_SIZE - 1;
 	for (int j = PIECE_SIZE - 1; j > 0; j--) {
 		if (checkZeroCol(j)) endJ = j - 1;
+		else break;
 	}
 }
 
